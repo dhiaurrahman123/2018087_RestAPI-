@@ -54,6 +54,6 @@ fun TopAppBar(scrollBehavior: TopAppBarScrollBehavior, modifier:Modifier= Modifi
                 style = MaterialTheme.typography.headlineSmall,
             }
         },
-        modifier = Modifier
+       modifier = Modifier
     )
 }
