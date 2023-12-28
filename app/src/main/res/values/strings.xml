@@ -6,6 +6,6 @@
     <string name="mars_photo">Mars photo</string>
     <string name="nama">Nama</string>
     <string name="nohp">NOHp</string>
-    <string name="alamat">Alamat</string>
     <string name="id">ID</string>
+    <string name="email">Email</string>
 </resources>

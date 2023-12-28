@@ -33,7 +33,13 @@ data class InsertUIEvent(
     val email: String="",
     val nohp:String=""
 )
+fun InsertUIEvent.toKontak():Kontak = Kontak(
+    id=id,
+    nama=nama,
+    email=email,
+    nohp=nohp,
 
+)
 fun Kontak.toUIStateKontak():InsertUIState=InsertUIState(
     insertUIEvent = toInsertUiEvent(),
 )
