@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
@@ -29,6 +30,7 @@ import androidx.compose.ui.unit.dp
 import com.example.pertemuan12.R
 import com.example.pertemuan12.ui.theme.home.viewmodel.KontakUIState
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.example.pertemuan12.model.Kontak
 
@@ -119,6 +121,11 @@ fun KontakCard(
             style == MaterialTheme.typography.titleMedium
         )
         Spacer(Modifier.weight(1f))
-
+        IconButton(onClick={onDeleteClick(kontak)}){
+            Icon(
+                imageVector = Icons.Default.Delete,
+                contentDescription = null,
+            )
+        }
     }
 }
