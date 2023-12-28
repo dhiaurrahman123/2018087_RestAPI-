@@ -9,6 +9,7 @@ import kotlinx.coroutines.launch
 import java.io.IOException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import com.example.pertemuan12.model.Kontak
 
 
 sealed class KontakUIState{

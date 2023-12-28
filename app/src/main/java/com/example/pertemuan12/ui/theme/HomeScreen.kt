@@ -29,12 +29,13 @@ import com.example.pertemuan12.R
 import com.example.pertemuan12.ui.theme.home.viewmodel.KontakUIState
 import androidx.compose.material3.Icon
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.example.pertemuan12.model.Kontak
 
 @Composable
 fun HomeScreen(
     kontakUIState: KontakUIState, retryAction: ()-> Unit, modifier: Modifier -> Modifier
 ){
-    when (kontakUIState){
+    when (KontakUIState){
         is KontakUIState.Loading -> OnLanding(modifier = modifier.fillMaxSize())
         is KontakUIState.Succes-> KontakLayout(
             kontak = KontakUIState.Kontak, modifier = modifier.fillMaxSize())

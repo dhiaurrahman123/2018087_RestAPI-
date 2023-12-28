@@ -1,4 +1,4 @@
-package com.example.pertemuan12.ui.theme
+package com.example.pertemuan12.KontakAPP
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -7,17 +7,16 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
-import androidx.compose.material3.TopAppBarState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.modifier.ModifierLocalReadScope
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pertemuan12.R
+import com.example.pertemuan12.ui.theme.HomeScreen
+import com.example.pertemuan12.ui.theme.PenyediaViewModel
 import com.example.pertemuan12.ui.theme.home.viewmodel.HomeViewModel
 import org.w3c.dom.Text
 
@@ -28,7 +27,7 @@ fun KontakApp(
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
     Scaffold (
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
-        topBar = { TopAppBar(scrollBehavior = scrollBehavior)}
+        topBar = { TopAppBar(scrollBehavior = scrollBehavior) }
     ){
         Surface (
             modifier = Modifier
@@ -42,6 +41,11 @@ fun KontakApp(
         }
     }
 }
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TopAppBarKontak(
+
+){}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Pertemuan 12</string>
-    <string name="app_name">REST API</string>
     <string name="loading_failed">Failed to load</string>
     <string name="retry">Retry</string>
     <string name="loading">Loading</string>
     <string name="mars_photo">Mars photo</string>
+    <string name="nama">Nama</string>
+    <string name="nohp">NOHp</string>
+    <string name="alamat">Alamat</string>
+    <string name="id">ID</string>
 </resources>
