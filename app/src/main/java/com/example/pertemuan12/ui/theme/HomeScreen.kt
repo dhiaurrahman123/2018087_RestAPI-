@@ -4,6 +4,7 @@ import android.graphics.drawable.Icon
 import android.media.Image
 import android.widget.ImageView
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -87,9 +88,11 @@ fun KontakLayout(
             KontakCard(kontak = kontak,
                 modifier=Modifier
                     .fillMaxWidth()
-
+                    .clickable { onDetailClick(kontak) },
+                onDeleteClick={
+                    onDeleteClick(kontak)
+                }
             )
-
         }
     }
 }
