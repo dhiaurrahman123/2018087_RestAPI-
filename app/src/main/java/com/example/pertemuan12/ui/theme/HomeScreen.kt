@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
@@ -98,5 +99,26 @@ fun KontakLayout(
             text = kontak.alamat,
             style = MaterialTheme.typography.titleLarge
         )
+    }
+}
+
+
+
+@Composable
+fun KontakCard(
+    kontak : Kontak
+    onDeleteClick:(Kontak)=Unit={}
+    modifier:Modifier=Modifier
+) {
+    Row (
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterHorizontally
+    ){
+        Text(
+            text = kontak.email,
+            style == MaterialTheme.typography.titleMedium
+        )
+        Spacer(Modifier.weight(1f))
+
     }
 }
