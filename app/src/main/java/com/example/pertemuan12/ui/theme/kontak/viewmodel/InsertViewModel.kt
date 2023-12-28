@@ -23,3 +23,12 @@ class InsertViewModel (private val kontakRepository: KontakRepository): ViewMode
         }
     }
 }
+data class InsertUIState(
+    val insertUIEvent: InsertUIEvent = InsertUIEvent()
+)
+data class InsertUIEvent(
+    val id: Int= 0,
+    val nama:String="",
+    val email: String="",
+    val nohp:String=""
+)
