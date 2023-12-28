@@ -35,15 +35,25 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.example.pertemuan12.model.Kontak
-
 @Composable
-fun HomeScreen(
-    kontakUIState: KontakUIState, retryAction: ()-> Unit, modifier: Modifier -> Modifier
+fun HomeStatus(
+    kontakUIState: KontakUIState,
+    retryAction: ()-> Unit,
+    modifier: Modifier -> Modifier,
+    onDeleteClick:(Kontak)->Unit={},
+    onDetailClick:(Int)-Unit
+
 ){
     when (KontakUIState){
         is KontakUIState.Loading -> OnLanding(modifier = modifier.fillMaxSize())
         is KontakUIState.Succes-> KontakLayout(
             kontak = KontakUIState.Kontak, modifier = modifier.fillMaxSize())
+    onDetailClick={
+        onDetailClick(it.id)
+    },
+        onDeleteClick={
+            onDeleteClick(it)
+        }
     }
     is KontakUIState.Error -> OnError(retryAction, modifier = modifier.fillMaxSize())
 }
