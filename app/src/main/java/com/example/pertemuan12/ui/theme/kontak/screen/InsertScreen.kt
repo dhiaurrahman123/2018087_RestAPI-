@@ -7,8 +7,10 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
@@ -26,7 +28,54 @@ import com.example.pertemuan12.ui.theme.kontak.viewmodel.InsertUIState
 import com.example.pertemuan12.ui.theme.kontak.viewmodel.InsertViewModel
 import kotlinx.coroutines.launch
 
-
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun FormInputSiswa (
+    insertUIEvent: InsertUIEvent,
+    modifier: Modifier = Modifier,
+    onValueChange:(InsertUIEvent)->Unit = {},
+    enabled:Boolean=true
+) {
+    Column(
+        modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ){
+        OutlinedTextField(
+            value = insertUIEvent.nama,
+            onValueChange={onValueChange (insertUIEvent.copy(nama=it)) },
+            Label={Text("Nama")},
+            modifier= Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine= true
+        )
+        OutlinedTextField(
+            value = insertUIEvent.email,
+            onValueChange={onValueChange (insertUIEvent.copy(email=it)) },
+            Label={Text("Email")},
+            modifier= Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine= true
+        )
+        OutlinedTextField(
+            value = insertUIEvent.nohp,
+            onValueChange={onValueChange (insertUIEvent.copy(nohp=it)) },
+            Label={Text("NoHP")},
+            modifier= Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine= true
+        )
+        if(enabled){
+            Text(
+                text = "Isi semua data",
+                modifier = Modifier.padding(start = 12.dp)
+            )
+        }
+        Divider(
+            thickness = 3.dp,
+            modifier = Modifier.padding(12.dp)
+        )
+    }
+}
 
 @Composable
 fun EntryKontakBody(
