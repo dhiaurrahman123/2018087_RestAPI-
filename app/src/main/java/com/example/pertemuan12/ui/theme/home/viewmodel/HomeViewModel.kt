@@ -9,6 +9,7 @@ import kotlinx.coroutines.launch
 import java.io.IOException
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pertemuan12.model.Kontak
 
 
@@ -37,5 +38,13 @@ class HomeViewModel(private val KontakRepository: KontakRepository): ViewModel()
     }
 }
 fun deleteKontak(id:Int){
-
+    viewModelScope.Lauch{
+        try{
+            KontakRepository.deleteKontak(id)
+        } catcj(e: IOException){
+            KontakUIState.Error
+    }catch(e:HttpException){
+        KontakUIState.Error
+    }
+    }
 }
