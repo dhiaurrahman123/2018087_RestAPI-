@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Phone
@@ -77,32 +78,19 @@ fun KontakLayout(
     onDetailClick:(Kontak)-< Unit,
     onDeleteClick: (Kontak)->Unit={}
 ){
-    Card(
-        modifier = modifier,
-        shape = MaterialTheme.shapes.medium,
-        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
+    LazyColumn(
+        modifier=modifier,
+        contentPadding = PaddingValues(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ){
-      Row(
-         modifier= Modifier.padding(18.dp)
-      ) {
-          Text(
-              text =kontak.nama ,
-                style = MaterialTheme.typography.titleLarge,
-          )
-          Spacer(Modifier.weight())
-          Icon (
-              ImageVector = Icons.Default.Phone,
-              contentDescription = Null,
-          )
-          Text(
-              text = kontak.nohp,
-              style = MaterialTheme.typography.titleLarge
-          )
-      }
-        Text(
-            text = kontak.alamat,
-            style = MaterialTheme.typography.titleLarge
-        )
+        items(Kontak){Kontak->
+            KontakCard(kontak = kontak,
+                modifier=Modifier
+                    .fillMaxWidth()
+
+            )
+
+        }
     }
 }
 
